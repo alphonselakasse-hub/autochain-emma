@@ -1,0 +1,130 @@
+/* Arrière-plan sombre plein écran */
+.intro-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #08080c;
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+}
+
+.phase-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+/* --- PHASE 1 --- */
+.car-track {
+  width: 60%;
+  height: 4px;
+  background: #222;
+  margin: 30px 0;
+  position: relative;
+  border-radius: 2px;
+}
+
+.car-icon {
+  position: absolute;
+  top: -25px;
+  font-size: 2rem;
+  transform: translateX(-50%);
+  transition: left 0.03s linear;
+}
+
+.percentage-text {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #e63946;
+  text-shadow: 0 0 15px rgba(230, 57, 70, 0.6);
+}
+
+/* --- PHASE 2 : SHARINGAN --- */
+.sharingan-eye {
+  width: 120px;
+  height: 120px;
+  background: #d62828;
+  border-radius: 50%;
+  border: 4px solid #000;
+  position: relative;
+  box-shadow: 0 0 35px #d62828;
+  animation: spinSharingan 2s infinite linear;
+  margin-bottom: 25px;
+}
+
+.sharingan-pupil {
+  width: 25px;
+  height: 25px;
+  background: #000;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spinSharingan {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.itachi-quote {
+  font-size: 2.2rem;
+  letter-spacing: 3px;
+  color: #ff4d4d;
+  text-shadow: 0 0 20px rgba(255, 77, 77, 0.8);
+  font-weight: 800;
+}
+
+.itachi-subtext {
+  font-style: italic;
+  color: #888;
+  margin-top: 10px;
+}
+
+/* --- PHASE 3 : COURSE --- */
+.speed-lines {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 20px,
+    rgba(255, 255, 255, 0.05) 20px,
+    rgba(255, 255, 255, 0.05) 40px
+  );
+}
+
+.racing-cars {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.racing-car {
+  font-size: 3rem;
+  animation: carRush 1.2s infinite ease-in-out alternate;
+}
+
+@keyframes carRush {
+  0% { transform: translateX(-150px) scale(0.9); }
+  100% { transform: translateX(150px) scale(1.1); }
+}
+
+.launch-text {
+  margin-top: 40px;
+  font-size: 2.5rem;
+  font-weight: 900;
+  font-style: italic;
+}
